@@ -8,7 +8,36 @@ const dates = [
 ];
 
 // TODO: Buatlah fungsi createDate
-const createDate = null;
+const createDate = (dates, index) => {
+
+  let indexDate = '';
+
+
+  if(index >= 0){
+    indexDate = String(new Date(dates[index]).getTime() / 1000);
+  }else {
+    let total = '';
+    let arrayTotal = [];
+    let gabungArray = '';
+    for(const datesIni of dates){
+       total = String(new Date(datesIni).getTime() / 1000);
+       arrayTotal.push(total);
+       
+    }
+       gabungArray = arrayTotal.sort();
+       indexDate =  gabungArray.join("-");
+
+  }
+  
+
+  
+   return indexDate;
+
+}
+
+
+
+
 
 // ! JANGAN DIMODIFIKASI
 (() => {
